@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <script defer src="index.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+
+    <!-- PARTIE LOGIN -->
+    <div class="flex flex-col w-full justify-center items-center flex-grow gap-3">
+        <h1 class="text-3xl w-full text-center text-sky-400 mb-2">MyChatRooms</h1>
+        <div id="login" class="flex flex-col w-fit gap-5 bg-white/5 p-5 rounded border border-sky-400">
+            <div class="flex flex-col w-full">
+                <label for="username" class="py-1 text-sky-400">Enter your username :</label>
+                <input type="text" id="username" class="p-1">
+            </div>
+
+            <div class="flex flex-col w-full">
+                <label for="room" class="py-1 text-sky-400">Enter a room to join or create :</label>
+                <input type="text" id="room" class="p-1">
+            </div>
+
+            <button class="bg-sky-600 p-2 hover:scale-95 hover:bg-sky-800 transition-all duration-200"
+                onclick="joinRoom()">Join Room</button>
+        </div>
+    </div>
+
+    <!-- PARTIE CHAT ET INFOS CHAT -->
+    <div id="chat" class="gap-5 hidden h-full flex">
+        <div class="w-full flex flex-col gap-5">
+            <div class="flex flex-col w-full gap-1">
+                <h2 id="room-name" class="w-full bg-sky-400 text-[15px] text-black p-2 rounded"></h2>
+                <div id="users" class="w-full"></div>
+                <div id="word" class="w-full"></div>
+                <textarea id="text" class="w-full bg-white/5 p-2" placeholder="Enter your message"></textarea>
+                <button
+                    class="w-full bg-sky-600 hover:bg-sky-800 border border-transparent hover:border-sky-400 hover:bg-transparent hover:text-sky-400 text-black p-2 rounded transition-all duration-200"
+                    onclick="send()">
+                    Send
+                </button>
+            </div>
+            <div id="messages" class="h-full rounded bg-slate-600/20 p-2 w-full"></div>
+        </div>
+
+        <!-- PARTIE DU DESSIN -->
+        <div class="p-5 w-full">
+            <h2 id="drawerCanvasHeader" style="display:none;">Drawing Canvas (for the drawer only):</h2>
+            <canvas id="drawingCanvas" width="900" height="700"
+                class="border border-2 bg-white border-sky-400 rounded"></canvas>
+            <h2 id="viewerCanvasHeader">View the Drawing (visible for all except the drawer):</h2>
+            <canvas id="viewingCanvas" width="900" height="700"
+                class="border border-2 bg-white border-sky-400 rounded"></canvas>
+        </div>
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer class="flex flex-row gap-2 w-full text-xl items-center justify-center">
+        <p>Made By</p>
+        <p>
+            <span class="text-sky-400">Clément</span>
+            (le vilain pd ^^),
+        </p>
+        <p>
+            <span class="text-sky-400">
+                Pierre
+            </span>
+            and
+        </p>
+        <p class="text-sky-400">Raoul</p>
+        <p class="text-red-500 text-3xl">©</p>
+        <p>2024</p>
+    </footer>
+</body>
+
+</html>
